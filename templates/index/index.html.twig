@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+{% endblock %}
+
+{% block title %}
+  {{ parent() }} - Bienvenue
+{% endblock %}
+
+{% block body %}
+
+     <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Monster Product</h1>
+      <p class="lead">Tous les produits dont vous révez</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="columns"
+    <div class="d-flex flex-wrap justify-content-around" style="align-items:center">
+      {% for article in articles %}
+        {{ include('index/article_list.html.twig', { article: article }) }}
+      {% endfor %}
+    </div>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}
+{% endblock %}
